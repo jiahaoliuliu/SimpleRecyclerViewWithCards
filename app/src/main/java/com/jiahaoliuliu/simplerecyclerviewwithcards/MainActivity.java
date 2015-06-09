@@ -10,6 +10,8 @@ public class MainActivity extends AppCompatActivity {
     private String[] myDataset = new String[]{"a", "b", "c", "d", "e",
             "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p"};
 
+//    private String[] myDataset = new String[]{"a"};
+
     private RecyclerView mRecyclerView;
     private RecyclerView.Adapter mAdapter;
     private RecyclerView.LayoutManager mLayoutManager;

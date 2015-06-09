@@ -19,9 +19,9 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.ViewHolder> {
     public static class ViewHolder extends RecyclerView.ViewHolder {
         // each data item is just a string in this class
         public TextView mTextView;
-        public ViewHolder(TextView v) {
-            super(v);
-            mTextView = v;
+        public ViewHolder(View view) {
+            super(view);
+            mTextView = (TextView)view.findViewById(R.id.titleTextView);
         }
     }
 
@@ -34,12 +34,16 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.ViewHolder> {
     public ViewHolder onCreateViewHolder(ViewGroup viewGroup, int viewType) {
 
         // Create a new view
-        TextView textView =
-                (TextView)LayoutInflater.from(viewGroup.getContext())
-                    .inflate(android.R.layout.simple_list_item_1, viewGroup, false);
+//        TextView textView =
+//                (TextView)LayoutInflater.from(viewGroup.getContext())
+//                    .inflate(android.R.layout.simple_list_item_1, viewGroup, false);
+
+        View view =
+                LayoutInflater.from(viewGroup.getContext())
+                    .inflate(R.layout.simple_card_view, viewGroup, false);
 
         // Set the view's size, margins, paddings and layout parameters
-        ViewHolder vh = new ViewHolder(textView);
+        ViewHolder vh = new ViewHolder(view);
         return vh;
     }
 
